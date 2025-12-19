@@ -67,8 +67,7 @@ The solution is structured around **6 real-world retail use cases**, each mapped
 ---
 
 ## 🏗️ High-Level Architecture
-
-------------
+```````````````````
 
 CSV Files
 ↓
@@ -85,7 +84,7 @@ Analytics & Business Logic Layer
 └── Inventory Correlation
 ↓
 Reporting / Dashboards / Notifications
-
+```````````````````
 --------
 
 ---
