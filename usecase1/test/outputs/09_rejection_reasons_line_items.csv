@@ -1,0 +1,5 @@
+rejection_reason,count
+REJECTED: Invalid line_item_amount,2
+REJECTED: Invalid product_id,1
+REJECTED: Invalid transaction_id,1
+REJECTED: Missing product_id,1

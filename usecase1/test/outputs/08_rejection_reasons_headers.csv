@@ -1,0 +1,7 @@
+rejection_reason,count
+REJECTED: Invalid customer_id,1
+REJECTED: Invalid store_id,1
+REJECTED: Invalid total_amount,2
+REJECTED: Invalid transaction_date,1
+REJECTED: Missing or NULL customer_id,2
+REJECTED: Total amount mismatch,58

@@ -1,0 +1,4 @@
+transaction_id,customer_id,store_id,transaction_date,total_amount,processed,created_timestamp
+TXN064,C001,ST001,2024-12-19 21:00:00,99.99,0,2025-12-19 10:08:36
+TXN067,C001,ST001,2024-12-19 23:30:00,200.0,0,2025-12-19 10:08:36
+TXN068,C001,ST002,2024-12-19 23:45:00,39.99,0,2025-12-19 10:08:36

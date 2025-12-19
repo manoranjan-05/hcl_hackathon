@@ -1,0 +1,4 @@
+line_item_id,transaction_id,product_id,promotion_id,quantity,line_item_amount,created_timestamp
+103,TXN068,P003,PR002,1,39.99,2025-12-19 10:08:36
+104,TXN067,P001,PR001,2,100.0,2025-12-19 10:08:36
+105,TXN067,P002,PR001,2,100.0,2025-12-19 10:08:36

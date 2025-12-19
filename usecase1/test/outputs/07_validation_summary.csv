@@ -1,0 +1,3 @@
+record_type,total,valid,rejected,validation_rate
+Header Records,68,3,65,4.41
+Line Item Records,104,3,5,2.88

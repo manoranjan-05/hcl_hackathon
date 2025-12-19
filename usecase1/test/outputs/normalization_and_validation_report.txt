@@ -1,0 +1,197 @@
+================================================================================
+DATA NORMALIZATION AND VALIDATION REPORT
+================================================================================
+
+SECTION 1: NORMALIZATION PROCESS
+--------------------------------------------------------------------------------
+
+1NF NORMALIZATION (First Normal Form)
+--------------------------------------------------------------------------------
+Purpose: Split multi-value cells into separate rows
+
+1NF Violations Found:
+  - Multi-value product_id cells (e.g., 'P001,P002')
+  - These violate 1NF requirement for atomic values
+  - 1NF requires each cell to contain a single, indivisible value
+
+1NF Normalization Applied:
+  - Split comma-separated product_ids into separate rows
+  - Each row now contains a single product_id value (atomic)
+  - Line item amounts adjusted proportionally when split
+  - Total line items after normalization: 104
+
+Result: All multi-value cells have been normalized
+  Example Transformation:
+    BEFORE (1NF Violation):
+      line_item_id: 102, product_id: 'P001,P002', quantity: 2, amount: 200.00
+    AFTER (1NF Normalized):
+      line_item_id: 102, product_id: 'P001', quantity: 1, amount: 100.00
+      line_item_id: 103, product_id: 'P002', quantity: 1, amount: 100.00
+
+2NF NORMALIZATION (Second Normal Form)
+--------------------------------------------------------------------------------
+Purpose: Remove partial dependencies
+
+2NF Violations Found:
+  - product_name column in line_items table
+  - product_category column in line_items table
+  - These depend on product_id, not line_item_id (partial dependency)
+
+2NF Normalization Applied:
+  - Removed product_name column from line_items
+  - Removed product_category column from line_items
+  - Product information is stored in products table (referenced via product_id)
+
+  Example Transformation:
+    BEFORE (2NF Violation):
+      line_item_id: 1, product_id: 'P001', product_name: 'Wireless Headphones', quantity: 2
+    AFTER (2NF Normalized):
+      line_item_id: 1, product_id: 'P001', quantity: 2
+      (product_name retrieved from products table via JOIN)
+
+3NF NORMALIZATION (Third Normal Form)
+--------------------------------------------------------------------------------
+Purpose: Remove transitive dependencies
+
+3NF Violations Found:
+  - store_region column in header table
+  - store_city column in header table
+  - These depend on store_id/customer_id, not transaction_id (transitive dependency)
+
+3NF Normalization Applied:
+  - Removed store_region column from header
+  - Removed store_city column from header
+  - Store/Customer information is stored in respective tables (referenced via foreign keys)
+
+  Example Transformation:
+    BEFORE (3NF Violation):
+      transaction_id: 'TXN001', store_id: 'ST001', store_city: 'New York', store_region: 'New York'
+    AFTER (3NF Normalized):
+      transaction_id: 'TXN001', store_id: 'ST001'
+      (store_city, store_region retrieved from stores table via JOIN)
+
+Normalization Summary:
+  - Data is now in 3NF (Third Normal Form)
+  - All tables have atomic values (1NF)
+  - No partial dependencies (2NF)
+  - No transitive dependencies (3NF)
+
+
+================================================================================
+SECTION 2: DATA QUALITY VALIDATION
+--------------------------------------------------------------------------------
+
+HEADER VALIDATION RULES
+--------------------------------------------------------------------------------
+
+Rule 10: REJECTED: Total amount mismatch
+  Violations Found: 58 records
+  Example Transaction IDs: TXN001, TXN002, TXN003
+  Action: Records moved to quarantine_rejected_sales_header
+
+Rule 1: REJECTED: Missing or NULL customer_id
+  Violations Found: 2 records
+  Example Transaction IDs: TXN056, TXN061
+  Action: Records moved to quarantine_rejected_sales_header
+
+Rule 5: REJECTED: Invalid total_amount
+  Violations Found: 2 records
+  Example Transaction IDs: TXN059, TXN060
+  Action: Records moved to quarantine_rejected_sales_header
+
+Rule 4: REJECTED: Invalid transaction_date
+  Violations Found: 1 records
+  Example Transaction IDs: TXN062
+  Action: Records moved to quarantine_rejected_sales_header
+
+Rule 2: REJECTED: Invalid store_id
+  Violations Found: 1 records
+  Example Transaction IDs: TXN058
+  Action: Records moved to quarantine_rejected_sales_header
+
+Rule 3: REJECTED: Invalid customer_id
+  Violations Found: 1 records
+  Example Transaction IDs: TXN057
+  Action: Records moved to quarantine_rejected_sales_header
+
+
+LINE ITEMS VALIDATION RULES
+--------------------------------------------------------------------------------
+
+Rule 8: REJECTED: Invalid line_item_amount
+  Violations Found: 2 records
+  Example Line Item IDs: 100, 101
+  Action: Records moved to quarantine_rejected_sales_line_items
+
+Rule 6: REJECTED: Missing product_id
+  Violations Found: 1 records
+  Example Line Item IDs: 91
+  Action: Records moved to quarantine_rejected_sales_line_items
+
+Rule 9: REJECTED: Invalid transaction_id
+  Violations Found: 1 records
+  Example Line Item IDs: 98
+  Action: Records moved to quarantine_rejected_sales_line_items
+
+Rule 7: REJECTED: Invalid product_id
+  Violations Found: 1 records
+  Example Line Item IDs: 99
+  Action: Records moved to quarantine_rejected_sales_line_items
+
+
+================================================================================
+SECTION 3: VALIDATION SUMMARY STATISTICS
+--------------------------------------------------------------------------------
+
+Header Records:
+  Total Records:    68
+  Valid Records:   3
+  Rejected Records: 65
+  Validation Rate:  4.41%
+
+Line Item Records:
+  Total Records:    104
+  Valid Records:   3
+  Rejected Records: 5
+  Validation Rate:  2.88%
+
+
+================================================================================
+SECTION 4: DETAILED EXAMPLES
+--------------------------------------------------------------------------------
+
+Example: Rejected Header Record
+--------------------------------------------------------------------------------
+  transaction_id: TXN056
+  customer_id: INVALID
+  store_id: ST001
+  transaction_date: 2024-12-13 19:00:00
+  total_amount: 99.99
+  rejection_reason: REJECTED: Missing or NULL customer_id
+  rejection_timestamp: 2025-12-19 09:58:45
+
+Example: Rejected Line Item Record
+--------------------------------------------------------------------------------
+  line_item_id: 91
+  transaction_id: TXN060
+  product_id: None
+  promotion_id: PR001
+  quantity: 1
+  line_item_amount: 33.99
+  rejection_reason: REJECTED: Missing product_id
+  rejection_timestamp: 2025-12-19 09:58:45
+
+Example: Valid Header Record (Passed All Checks)
+--------------------------------------------------------------------------------
+  transaction_id: TXN064
+  customer_id: C001
+  store_id: ST001
+  transaction_date: 2024-12-19 21:00:00
+  total_amount: 99.99
+  processed: 0
+  created_timestamp: 2025-12-19 10:08:36
+
+
+================================================================================
+END OF REPORT
+================================================================================
