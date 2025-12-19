@@ -1,0 +1,17 @@
+product_id,product_name,product_category,unit_price,current_stock_level
+P001,Wireless Headphones,Electronics,79.99,150
+P002,Smart Watch,Electronics,199.99,85
+P003,Blue Jeans,Apparel,49.99,200
+P004,Cotton T-Shirt,Apparel,19.99,300
+P005,Running Shoes,Apparel,89.99,120
+P006,Laptop Stand,Electronics,39.99,90
+P007,Leather Jacket,Apparel,149.99,60
+P008,USB-C Cable,Electronics,12.99,250
+P009,Winter Coat,Apparel,129.99,75
+P010,Tablet,Electronics,299.99,45
+P011,Yoga Pants,Apparel,34.99,180
+P012,Phone Case,Electronics,24.99,220
+P013,Sneakers,Apparel,79.99,140
+P014,Bluetooth Speaker,Electronics,59.99,110
+P015,Hoodie,Apparel,44.99,160
+

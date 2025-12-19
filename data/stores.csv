@@ -1,0 +1,10 @@
+store_id,store_name,store_city,store_region,opening_date
+ST001,City Center Mall,New York,New York,2020-01-15
+ST002,Westside Plaza,Los Angeles,California,2019-03-20
+ST003,North Park Store,Chicago,Illinois,2021-06-10
+ST004,Riverside Shopping,Seattle,Washington,2018-11-05
+ST005,Downtown Hub,Houston,Texas,2020-09-12
+ST006,Metro Square,Atlanta,Georgia,2019-07-18
+ST007,Central Market,Boston,Massachusetts,2021-02-28
+ST008,Valley View Mall,Phoenix,Arizona,2020-05-14
+

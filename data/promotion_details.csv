@@ -1,0 +1,9 @@
+promotion_id,promotion_name,start_date,end_date,discount_percentage,applicable_category
+PR001,Electronics Flash Sale,2024-12-10,2024-12-20,15.00,Electronics
+PR002,Apparel Weekend Special,2024-12-14,2024-12-21,20.00,Apparel
+PR003,Winter Clearance,2024-12-01,2024-12-31,25.00,Apparel
+PR004,Tech Tuesday,2024-12-17,2024-12-24,10.00,Electronics
+PR005,Holiday Mega Sale,2024-12-15,2024-12-25,30.00,ALL
+PR006,Back to School,2024-12-12,2024-12-19,12.00,Electronics
+PR007,Summer Collection,2024-12-16,2024-12-23,18.00,Apparel
+

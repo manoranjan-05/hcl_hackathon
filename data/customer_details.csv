@@ -1,0 +1,17 @@
+customer_id,first_name,email,loyalty_status,total_loyalty_points,last_purchase_date,segment_id
+C001,John,john.smith@email.com,Gold,1250,2024-12-15,HS
+C002,Sarah,sarah.jones@email.com,Silver,680,2024-12-18,AR
+C003,Mike,mike.brown@email.com,Bronze,320,2024-12-10,AR
+C004,Emily,emily.davis@email.com,Gold,1890,2024-12-19,HS
+C005,David,david.wilson@email.com,Silver,540,2024-11-20,AR
+C006,Lisa,lisa.martinez@email.com,Bronze,210,2024-12-17,
+C007,James,james.taylor@email.com,Gold,2100,2024-12-19,HS
+C008,Jennifer,jennifer.anderson@email.com,Silver,750,2024-12-16,
+C009,Robert,robert.thomas@email.com,Bronze,180,2024-10-15,AR
+C010,Maria,maria.jackson@email.com,Gold,1650,2024-12-18,HS
+C011,William,william.white@email.com,Silver,420,2024-12-12,
+C012,Patricia,patricia.harris@email.com,Bronze,290,2024-12-14,
+C013,Richard,richard.martin@email.com,Gold,1980,2024-12-19,HS
+C014,Linda,linda.thompson@email.com,Silver,610,2024-12-11,
+C015,Joseph,joseph.garcia@email.com,Bronze,150,2024-09-10,AR
+

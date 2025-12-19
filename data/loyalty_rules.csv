@@ -1,0 +1,6 @@
+rule_id,rule_name,points_per_unit_spend,min_spend_threshold,bonus_points
+1,Standard Earning,1.00,0.00,0
+2,Weekend Bonus,1.00,50.00,25
+3,High Value Purchase,1.00,100.00,50
+4,Super Spender,1.00,200.00,100
+
