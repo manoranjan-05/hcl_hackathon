@@ -86,6 +86,7 @@ Analytics & Business Logic Layer
 Reporting / Dashboards / Notifications
 ```````````````````
 --------
+<img width="4002" height="1281" alt="image" src="https://github.com/user-attachments/assets/ebfaa598-9313-4205-9ef7-dfb527193190" />
 
 ---
 
@@ -171,7 +172,7 @@ Rejected records are preserved for auditing and analysis.
 ---
 
 ## 👥 Team Responsibilities
-
+``````````
 | Team Member | Responsibility |
 |-----------|---------------|
 | **You** | Overall design, data generation strategy, data quality |
