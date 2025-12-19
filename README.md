@@ -175,7 +175,6 @@ Rejected records are preserved for auditing and analysis.
 ``````````
 | Team Member | Responsibility |
 |-----------|---------------|
-| **You** | Overall design, data generation strategy, data quality |
 | **Prateek** | Data generation pipeline implementation |
 | **Surabhi** | Model training & ML experimentation |
 | **Ravindar** | Hosting, deployment & infrastructure |
