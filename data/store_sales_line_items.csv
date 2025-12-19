@@ -1,6 +1,6 @@
-line_item_id,transaction_id,product_id,promotion_id,quantity,line_item_amount
-1,TXN001,P001,PR001,2,135.98
-2,TXN001,P004,PR002,1,15.99
+line_item_id,transaction_id,product_id,promotion_id,quantity,line_item_amount,product_name,product_category
+1,TXN001,P001,PR001,2,135.98,Wireless Headphones,Electronics
+2,TXN001,P004,PR002,1,15.99,Cotton T-Shirt,Apparel
 3,TXN002,P005,PR002,1,71.99
 4,TXN003,P002,PR001,1,169.99
 5,TXN004,P003,PR002,2,79.98
@@ -91,4 +91,15 @@ line_item_id,transaction_id,product_id,promotion_id,quantity,line_item_amount
 90,TXN059,P003,PR002,1,39.99
 91,TXN060,,PR001,1,33.99
 92,TXN060,P006,PR001,1,33.99
+93,TXN061,P001,PR001,1,67.99
+94,TXN062,P002,PR001,1,169.99
+95,TXN063,P001,PR001,1,67.99
+96,TXN063,P004,PR002,1,15.99
+97,TXN063,P008,PR001,1,11.04
+98,TXN999,P001,PR001,1,67.99
+99,TXN064,P999,PR001,1,99.99
+100,TXN065,P001,PR001,1,-25.00
+101,TXN066,P001,PR001,1,0.00
+102,TXN067,"P001,P002",PR001,2,200.00,Wireless Headphones Smart Watch,Electronics Electronics
+103,TXN068,P003,PR002,1,39.99,Blue Jeans,Apparel
 
