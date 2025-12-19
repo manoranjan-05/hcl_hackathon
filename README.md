@@ -175,10 +175,10 @@ Rejected records are preserved for auditing and analysis.
 ``````````
 | Team Member | Responsibility |
 |-----------|---------------|
-| **Prateek** | Data generation pipeline implementation |
-| **Surabhi** | Model training & ML experimentation |
-| **Ravindar** | Hosting, deployment & infrastructure |
-| **Manoranjan** | End-to-end pipeline orchestration |
+| **Prateek** | Usecase 1 |
+| **Surabhi** | Usecase 4 |
+| **Ravindar** | Usecase 5 and 6 |
+| **Manoranjan** | Usecase 2 and 3 |
 
 ---
 
